@@ -12,7 +12,12 @@
     "test:coverage": "vitest --run --coverage"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@fontsource/poppins": "^5.2.6",
+    "@material-symbols/font-400": "^0.34.1",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1",
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.11",
     "lucide-react": "^0.540.0",

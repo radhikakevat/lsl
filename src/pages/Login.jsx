@@ -6,9 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
  
 const Login = ({ onLogin, onForgotPassword }) => {
   const [email, setEmail] = useState("");
- 
   const [password, setPassword] = useState("");
- 
   const [rememberMe, setRememberMe] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -109,12 +107,12 @@ const Login = ({ onLogin, onForgotPassword }) => {
           <span>Continue with Google</span>
         </button> */}
         <AzureSignInButton />
-        <button
+        {/* <button
           onClick={() => logoutTest()}
           className="w-full py-2 bg-black rounded-2xl text-white text-base font-[Poppins] hover:bg-gray-800 transition"
         >
           Logout
-        </button>
+        </button> */}
       </div>
     </div>
   );

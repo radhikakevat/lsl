@@ -1,19 +1,12 @@
 import { useState } from "react";
-import {
-  LayoutDashboard,
-  Users,
-  FileText,
-  Bell,
-  Wrench,
-  UserCog,
-} from "lucide-react";
+import Icon from "./ui/Icon";
  
 const navigationItems = [
-  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { id: "employees", label: "Employees", icon: Users },
-  { id: "reports", label: "Reports", icon: FileText },
-  { id: "rules", label: "LSL Rules Engine", icon: Wrench },
-  { id: "user_management", label: "User Management", icon: UserCog },
+  { id: "dashboard", label: "Dashboard" },
+  { id: "employees", label: "Employees" },
+  { id: "reports", label: "Reports" },
+  { id: "rules", label: "LSL Rules Engine" },
+  { id: "user_management", label: "User Management" },
 ];
  
 export default function Sidebar({ userRole, userName, activeSection, onSectionChange }) {
@@ -62,14 +55,14 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
         {/* Dashboard */}
         <div
           key="dashboard"
-          className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer font-['Poppins'] transition-colors ${
+          className={`flex items-center gap-3 p-4 rounded-lg cursor-pointer font-['Poppins'] transition-colors ${
             activeSection === "dashboard"
               ? "bg-gray-100 text-sky-700"
               : "text-gray-700 hover:bg-gray-100 hover:text-sky-700"
           }`}
           onClick={() => onSectionChange("dashboard")}
         >
-          <LayoutDashboard className="h-5 w-5 shrink-0" />
+          <Icon name="dashboard" size={24} type="symbols" />
           {!collapsed && <span className="text-base">Dashboard</span>}
         </div>
         {/* Employees */}
@@ -82,7 +75,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
           }`}
           onClick={() => onSectionChange("employees")}
         >
-          <Users className="h-5 w-5 shrink-0" />
+          <Icon name="groups_3" size={24} type="symbols" />
           {!collapsed && <span className="text-base">Employees</span>}
         </div>
         {/* Reports */}
@@ -95,7 +88,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
           }`}
           onClick={() => onSectionChange("reports")}
         >
-          <FileText className="h-5 w-5 shrink-0" />
+          <Icon name="overview" size={24} type="symbols" />
           {!collapsed && <span className="text-base">Reports</span>}
         </div>
         {/* Administration Section */}
@@ -114,7 +107,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
           }`}
           onClick={() => onSectionChange("rules")}
         >
-          <Wrench className="h-5 w-5 shrink-0" />
+          <Icon name="build" size={24} type="symbols" />
           {!collapsed && <span className="text-base">LSL Rules Engine</span>}
         </div>
         {/* User Management */}
@@ -127,7 +120,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
           }`}
           onClick={() => onSectionChange("user_management")}
         >
-          <UserCog className="h-5 w-5 shrink-0" />
+           <Icon name="manage_accounts" size={24} type="symbols" />
           {!collapsed && <span className="text-base">User Management</span>}
         </div>
       </nav>
@@ -135,7 +128,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
       <div className="mt-auto self-stretch py-4 border-t border-zinc-300 inline-flex flex-col justify-center items-end gap-2 overflow-hidden">
         {/* Notifications */}
         <div className="self-stretch p-4 bg-white rounded-lg inline-flex justify-start items-center gap-2 overflow-hidden">
-          <Bell className="w-6 h-6 shrink-0 text-zinc-900" />
+        <Icon name="notifications" size={24} type="symbols" />
           {!collapsed && (
             <span className="justify-start text-black text-base font-normal font-['Poppins']">Notifications</span>
           )}

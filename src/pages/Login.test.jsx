@@ -178,18 +178,18 @@ describe('Login Component', () => {
     // Error should be handled (you might want to add error display in the component)
   });
 
-  test('calls logoutUser when logout button is clicked', async () => {
-    api.post.mockResolvedValueOnce({});
+  // test('calls logoutUser when logout button is clicked', async () => {
+  //   api.post.mockResolvedValueOnce({});
 
-    renderWithProviders(<Login />);
+  //   renderWithProviders(<Login />);
     
-    const logoutButton = screen.getAllByRole('button', { name: 'Logout' })[0];
-    fireEvent.click(logoutButton);
+  //   const logoutButton = screen.getAllByRole('button', { name: 'Logout' })[0];
+  //   fireEvent.click(logoutButton);
     
-    await waitFor(() => {
-      expect(api.post).toHaveBeenCalledWith('/api/v1/auth/logout');
-    });
-  });
+  //   await waitFor(() => {
+  //     expect(api.post).toHaveBeenCalledWith('/api/v1/auth/logout');
+  //   });
+  // });
 
   test('inputs are marked as required', () => {
     renderWithProviders(<Login />);
