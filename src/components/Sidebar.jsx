@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Icon from "./ui/Icon";
  
@@ -60,7 +61,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
               ? "bg-gray-100 text-sky-700"
               : "text-gray-700 hover:bg-gray-100 hover:text-sky-700"
           }`}
-          onClick={() => onSectionChange("dashboard")}
+          onClick={() => onSectionChange && onSectionChange("dashboard")}
         >
           <Icon name="dashboard" size={24} type="symbols" />
           {!collapsed && <span className="text-base">Dashboard</span>}
@@ -73,7 +74,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
               ? "bg-gray-100 text-sky-700"
               : "text-gray-700 hover:bg-gray-100 hover:text-sky-700"
           }`}
-          onClick={() => onSectionChange("employees")}
+          onClick={() => onSectionChange && onSectionChange("employees")}
         >
           <Icon name="groups_3" size={24} type="symbols" />
           {!collapsed && <span className="text-base">Employees</span>}
@@ -86,7 +87,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
               ? "bg-gray-100 text-sky-700"
               : "text-gray-700 hover:bg-gray-100 hover:text-sky-700"
           }`}
-          onClick={() => onSectionChange("reports")}
+          onClick={() => onSectionChange && onSectionChange("reports")}
         >
           <Icon name="overview" size={24} type="symbols" />
           {!collapsed && <span className="text-base">Reports</span>}
@@ -98,6 +99,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
           </div>
         )}
         {/* LSL Rules Engine */}
+        {userRole === "admin" && (
         <div
           key="rules"
           className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer font-['Poppins'] transition-colors ${
@@ -105,11 +107,12 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
               ? "bg-gray-100 text-sky-700"
               : "text-gray-700 hover:bg-gray-100 hover:text-sky-700"
           }`}
-          onClick={() => onSectionChange("rules")}
+          onClick={() => onSectionChange && onSectionChange("rules")}
         >
           <Icon name="build" size={24} type="symbols" />
           {!collapsed && <span className="text-base">LSL Rules Engine</span>}
         </div>
+        )}
         {/* User Management */}
         <div
           key="user_management"
@@ -118,7 +121,7 @@ export default function Sidebar({ userRole, userName, activeSection, onSectionCh
               ? "bg-gray-100 text-sky-700"
               : "text-gray-700 hover:bg-gray-100 hover:text-sky-700"
           }`}
-          onClick={() => onSectionChange("user_management")}
+          onClick={() => onSectionChange && onSectionChange("user_management")}
         >
            <Icon name="manage_accounts" size={24} type="symbols" />
           {!collapsed && <span className="text-base">User Management</span>}

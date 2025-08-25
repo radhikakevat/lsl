@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.57% </span>
+                <span class="strong">82.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>87/95</span>
+                <span class='fraction'>78/95</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.57% </span>
+                <span class="strong">82.1% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>87/95</span>
+                <span class='fraction'>78/95</span>
             </div>
         
             
@@ -192,15 +192,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -237,12 +237,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -286,15 +286,15 @@ export const fetchCurrentUser = createAsyncThunk(
 export const logoutUser = createAsyncThunk(
   "auth/logoutUser",
   async (_, { rejectWithValue }) =&gt; {
-    try {
-      await api.post("/api/v1/auth/logout");
-      return true;
-    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      await api.post("/api/v1/auth/logout");</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    } catch (err) {</span>
 <span class="cstat-no" title="statement not covered" >      return rejectWithValue(</span>
 <span class="cstat-no" title="statement not covered" >        err.response?.data || { message: "Logout failed" }</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-  }
+<span class="cstat-no" title="statement not covered" >  }</span>
 );
  
 const authSlice = createSlice({
@@ -331,12 +331,12 @@ const authSlice = createSlice({
       })
       // logout
       .addCase(logoutUser.pending, (state) =&gt; {
-        state.loading = true;
-        state.error = null;
+<span class="cstat-no" title="statement not covered" >        state.loading = true;</span>
+<span class="cstat-no" title="statement not covered" >        state.error = null;</span>
       })
       .addCase(logoutUser.fulfilled, (state) =&gt; {
-        state.loading = false;
-        state.user = null; // ✅ clear user
+<span class="cstat-no" title="statement not covered" >        state.loading = false;</span>
+<span class="cstat-no" title="statement not covered" >        state.user = null; // ✅ clear user</span>
       })
       .addCase(logoutUser.rejected, (state, action) =&gt; {
 <span class="cstat-no" title="statement not covered" >        state.loading = false;</span>
@@ -352,7 +352,7 @@ export default authSlice.reducer;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-21T08:40:11.370Z
+                at 2025-08-25T10:51:41.631Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

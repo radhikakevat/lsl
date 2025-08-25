@@ -16,7 +16,6 @@ export default function Layout({ userRole, userName, activeSection, onSectionCha
       <div className="flex-1 flex flex-col p-3">
         {/* Top Header */}
         {/* <header className="h-14 bg-blue-600 text-white flex items-center px-4">
-          
         </header> */}
        <SearchCombo />
  
